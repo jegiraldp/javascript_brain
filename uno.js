@@ -1,6 +1,7 @@
-const brain = require('brain.js');
-var colors = require('colors');
+const brain = require('./brain.js');
+//var colors = require('colors');
 
+module.exports.calcular=function(){
 // provide optional config object (or undefined). Defaults shown.
 const config = {
     binaryThresh: 0.5,
@@ -25,10 +26,13 @@ net.train([{input: [0, 0], output: [0]},
 
 const salida = net.run([1, 0]);  // [0.987]
 output=parseFloat(salida);
+module.exports.salida = output;
 if(output>0.8){
   output=1;
 }
 if(output<0.1){
   output=0;
 }
-console.log("Resultado ".green+" "+output);
+//console.log("Resultado ".green+" "+output);
+return output;
+};
