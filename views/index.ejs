@@ -3,13 +3,40 @@
   <head>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <meta charset="utf-8">
-    <title>Hola</title>
+    <title>Neurona Uno</title>
   </head>
   <body>
-    <h3>Hola mundo</h3><hr/>
+    <h3>Neurona - Compuerta XOR - Curso Inteligencia Artificial - PCJIC</h3>
+    <div id="code">
+    <code>
+    Datos de entrenamiento:<br/>
+    {input: [0, 0], output: [0]},<br/>
+    {input: [0, 1], output: [1]},<br/>
+    {input: [1, 0], output: [1]},<br/>
+    {input: [1, 1], output: [0]}<br/>
+    </code></div>
+    <hr/>
+    <form  action="/inicio" method="post">
+      Número 1:<select name="txtNum1">
+        <option>1</option><option>0</option></select><br/><br/>
+      Número 2:<select name="txtNum2">
+        <option>1</option><option>0</option></select><br/><br/>
+      Iteraciones:<select name="txtIte">
+        <option>20000</option>
+        <option>2000</option>
+        <option>200</option>
+        <option>20</option>
+        <option>2</option>
+        </select><br/><br/>
+        Número de capas<select name="txtCap">
+          <option>2</option><option>1</option></select><br/><br/>
+      <input type="submit" name="" value="Calcular XOR">
+    </form>
+    <hr/>
     <div id="escondido">
-      <% if (rta) { %>
-        <p>Valor: <%= salida %> Aprox: <%= rta %></p>
+      <% if (salida) { %>
+        <p><b>Salida:</b> <%= salida %></p>
+        <p><b>Respuesta:</b> <%= rta %></p>
       <% } %>
     </div>
   </body>

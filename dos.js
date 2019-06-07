@@ -1,4 +1,4 @@
-const brain = require('brain.js');
+const brain = require('./public/js/brain.js');
 
 const config = {
   iterations: 2500,
@@ -44,8 +44,8 @@ const data = [
 ];
 
 // create a simple feed forward neural network with backpropagation
-const net = new brain.recurrent.LSTM();
-net.train(data,config);
+const net = new brain.NeuralNetwork(config);
+net.train(data);
 // texto a probar
 const test = "bogota";
 const salida = net.run(test);
